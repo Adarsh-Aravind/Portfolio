@@ -1,0 +1,52 @@
+# 🎨 Personal Portfolio - Adarsh Aravind
+
+> A modern, responsive, and interactive personal portfolio website showcasing AI & ML projects, skills, and experience.
+
+![Portfolio Preview](./media/preview.png)
+*(Note: You can add a screenshot of your portfolio here)*
+
+## ✨ Features
+
+- **💎 Neumorphic Design**: Soft, realistic UI elements with consistent lighting and shadows.
+- **🌓 Dark/Light Mode**: Fully functional theme toggler with persistent state (saved in LocalStorage).
+- **📱 Fully Responsive**: Optimized layout for Desktops, Tablets, and Mobile devices.
+- **✨ Interactive Animations**:
+  - Particle background effect.
+  - Typing text effect for the intro.
+  - Hover effects on cards and buttons.
+  - Smooth scrolling and page transitions (AOS).
+- **🛠️ Tech Stack**:
+  - **Core**: HTML5, CSS3, JavaScript (Vanilla).
+  - **Libraries**: `typed.js` (Typing), `particles.js` (Background), `AOS` (Scroll Animations), `FontAwesome` (Icons).
+
+## 🚀 Setup & Usage
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Adarsh-Aravind/Portfolio.git
+    ```
+2.  **Open the project**:
+    Navigate to the project folder and simply open `index.html` in your browser.
+
+    *Or serve it locally:*
+    ```bash
+    # using python
+    python -m http.server 8000
+    ```
+
+## 📂 Project Structure
+
+```
+Portfolio/
+├── index.html       # Main HTML structure
+├── style.css        # All styles (Neumorphism, Layout, Animations)
+├── script.js        # Logic for Dark Mode, Typing, etc.
+├── icons/           # Skill icons (Python, AWS, etc.)
+└── README.md        # Project documentation
+```
+
+## 📬 Contact
+
+- **Email**: adarshachutham@gmail.com
+- **Behance**: [Adarsh Aravind](https://www.behance.net/adarsharavind)
+- **LinkedIn**: (Add your LinkedIn URL here)
