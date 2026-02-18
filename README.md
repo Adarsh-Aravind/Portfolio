@@ -2,7 +2,7 @@
 
 > A modern, responsive, and interactive personal portfolio website showcasing AI & ML projects, skills, and experience.
 
-![Portfolio Preview](./media/preview.png)
+
 *(Note: You can add a screenshot of your portfolio here)*
 
 ## ✨ Features
@@ -49,4 +49,4 @@ Portfolio/
 
 - **Email**: adarshachutham@gmail.com
 - **Behance**: [Adarsh Aravind](https://www.behance.net/adarsharavind)
-- **LinkedIn**: (Add your LinkedIn URL here)
+- **LinkedIn**: 
