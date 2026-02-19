@@ -19,21 +19,6 @@
   - **Core**: HTML5, CSS3, JavaScript (Vanilla).
   - **Libraries**: `typed.js` (Typing), `particles.js` (Background), `AOS` (Scroll Animations), `FontAwesome` (Icons).
 
-## 🚀 Setup & Usage
-
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/Adarsh-Aravind/Portfolio.git
-    ```
-2.  **Open the project**:
-    Navigate to the project folder and simply open `index.html` in your browser.
-
-    *Or serve it locally:*
-    ```bash
-    # using python
-    python -m http.server 8000
-    ```
-
 ## 📂 Project Structure
 
 ```
