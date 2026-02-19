@@ -151,7 +151,8 @@ body::before {
 
 .bottom-categories {
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
+    /* Moved up to avoid overlap with scroll button */
     left: 0;
     width: 100%;
     display: flex;
@@ -918,8 +919,8 @@ body.dark-mode .bottom-categories {
     .bottom-categories {
         display: flex !important;
         position: absolute !important;
-        bottom: 80px !important;
-        /* Above the scroll button */
+        bottom: 110px !important;
+        /* Moved further up for safety */
         right: 5vw !important;
         left: auto !important;
         /* Unset left */
