@@ -618,7 +618,8 @@ hr {
     }
 
     .personal-statement-minimal {
-        padding-top: 28vh;
+        padding-top: 20px;
+        /* Reduced from 28vh to remove blank space */
         font-size: 1rem;
     }
 
@@ -940,8 +941,6 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    overflow-y: auto;
-    /* Explicitly allow vertical scroll */
 }
 
 /* Button Positioning Fix */
@@ -955,8 +954,6 @@ body {
 /* Restrict Max Widths */
 .resume-page,
 .skills-section,
-.contact-section,
-.details-grid-section,
 .personal-statement-minimal {
     max-width: 100%;
     box-sizing: border-box;
