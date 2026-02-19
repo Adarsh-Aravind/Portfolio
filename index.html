@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adarsh's Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=43">
+    <link rel="stylesheet" href="style.css?v=50">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap"
@@ -56,7 +56,9 @@
                 <span class="name-part-bottom">ARAVIND</span>
             </div>
             <div class="personal-statement-minimal">
-                <p>Curious by nature, adaptable by design. I thrive on collaborative deep-dives and turning 'what if' into 'what’s next.' I believe every experience—from the major wins to the productive pivots—adds something valuable to the toolkit. Let’s build something cool.</p>
+                <p>Curious by nature, adaptable by design. I thrive on collaborative deep-dives and turning 'what if'
+                    into 'what’s next.' I believe every experience—from the major wins to the productive pivots—adds
+                    something valuable to the toolkit. Let’s build something cool.</p>
             </div>
         </div>
 
@@ -208,16 +210,16 @@
             <div class="behance-embed-container" data-aos="flip-up">
                 <iframe src="https://www.behance.net/embed/project/218240039?ilo0=1" height="300" width="300"
                     class="behance-card" allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-                    refererPolicy="strict-origin-when-cross-origin"></iframe>
+                    refererPolicy="strict-origin-when-cross-origin" scrolling="no"></iframe>
                 <iframe src="https://www.behance.net/embed/project/229862345?ilo0=1" height="300" width="300"
                     class="behance-card" allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-                    refererPolicy="strict-origin-when-cross-origin"></iframe>
+                    refererPolicy="strict-origin-when-cross-origin" scrolling="no"></iframe>
                 <iframe src="https://www.behance.net/embed/project/165714195?ilo0=1" height="300" width="300"
                     class="behance-card" allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-                    refererPolicy="strict-origin-when-cross-origin"></iframe>
+                    refererPolicy="strict-origin-when-cross-origin" scrolling="no"></iframe>
                 <iframe src="https://www.behance.net/embed/project/186319741?ilo0=1" height="300" width="300"
                     class="behance-card" allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-                    refererPolicy="strict-origin-when-cross-origin"></iframe>
+                    refererPolicy="strict-origin-when-cross-origin" scrolling="no"></iframe>
             </div>
         </section>
         <hr>
@@ -226,21 +228,112 @@
                 <span class="name-part-top">CON</span>
                 <span class="name-part-bottom">TACT</span>
             </div>
-            <div class="contact-info">
-                <p>adarshachutham@gmail.com</p>
-                <p><a href="https://www.linkedin.com/in/adarsh-aravind-6782992a6/">linkedin.com/in/adarsharavind</a>
-                </p>
+            <div class="contact-container" data-aos="fade-up">
+                <!-- Contact Form (Formspree) -->
+                <!-- Contact Form (Formspree AJAX) -->
+                <form id="my-form" class="contact-form" action="https://formspree.io/f/mdallkdn" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required class="neumorphic-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required class="neumorphic-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required
+                            class="neumorphic-input"></textarea>
+                    </div>
+                    <button type="submit" class="neumorphic-button submit-btn" id="my-form-button">Send Message</button>
+                    <p id="my-form-status" style="margin-top: 10px; font-size: 0.9rem;"></p>
+                </form>
+                <div class="contact-links">
+                    <p>adarshachutham@gmail.com</p>
+                    <p><a href="https://www.linkedin.com/in/adarsh-aravind-6782992a6/" target="_blank">LinkedIn
+                            Profile</a></p>
+                </div>
             </div>
+
+
+
             <footer class="contact-section">
                 <div class="contact-info">
                     <p>© Adarsh Aravind. All rights Reserved</p>
                 </div>
             </footer>
-
     </section>
+    </section>
+
+    <!-- Success Toast (Moved outside sections to fix positioning) -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <div class="modal-text-content">
+                <h3>Message Sent!</h3>
+                <p>I'll get back to you soon.</p>
+            </div>
+            <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        var form = document.getElementById("my-form");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            var submitBtn = document.getElementById("my-form-button");
+
+            // Visual feedback
+            var originalText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = ""; // Clear status text
+                    showSuccessModal();
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerText = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerText = "Oops! There was a problem submitting your form";
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.innerText = "Oops! There was a problem submitting your form";
+            }).finally(() => {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+
+        form.addEventListener("submit", handleSubmit);
+
+        function showSuccessModal() {
+            var modal = document.getElementById('successModal');
+            modal.classList.add('active');
+
+            // Auto-close after 4 seconds
+            setTimeout(function () {
+                closeModal();
+            }, 4000);
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+    </script>
     <script>
         AOS.init({
             offset: 200,
