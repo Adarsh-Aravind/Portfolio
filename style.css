@@ -168,8 +168,10 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     white-space: nowrap;
-    font-size: 1rem;
-    /* Slightly larger for emphasis */
+    font-size: 1.5rem;
+    /* Increased from 1rem */
+    font-weight: 600;
+    /* Bolder */
     color: var(--text-color-dark);
 }
 
@@ -899,6 +901,14 @@ body.dark-mode .bottom-categories {
         z-index: 100;
         opacity: 1 !important;
         color: var(--text-color-dark);
+    }
+
+    .bottom-categories span {
+        font-size: 1.1rem;
+        /* Slightly smaller on mobile but still visible */
+        white-space: normal;
+        /* Allow wrapping if needed */
+        text-align: right;
     }
 
     body.dark-mode .my-name {
