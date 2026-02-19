@@ -636,6 +636,20 @@ hr {
         padding-top: 50px;
         text-align: center;
     }
+
+    hr {
+        margin: 30px 0;
+        /* Reduced from 100px */
+    }
+
+    .name-statement-section,
+    .contact-section {
+        padding-bottom: 20px;
+        /* Reduced padding */
+        min-height: auto;
+        /* Remove large min-heights */
+        margin-top: 20px;
+    }
 }
 
 .dark-mode-toggle {
